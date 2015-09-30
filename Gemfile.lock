@@ -133,6 +133,7 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    will_paginate (3.0.7)
     yard (0.8.6.1)
 
 PLATFORMS
@@ -148,9 +149,13 @@ DEPENDENCIES
   pg
   pry-doc
   pry-rails
-  rails (~> 3.2.13)
+  rails
   rspec-rails
   ruby-prof
   sass-rails (~> 3.2.3)
   test-unit
   uglifier (>= 1.0.3)
+  will_paginate
+
+BUNDLED WITH
+   1.10.6

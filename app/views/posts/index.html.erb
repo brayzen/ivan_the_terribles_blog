@@ -2,6 +2,11 @@
 
 <section class="blog">
   <%= render @posts %>
+<% @posts.each do |p| %>
+  <% cache(p) do %>
+    <%= link_to p.title, post_url(p) %>
+  <% end %>
+<% end %>
 </section>
 
 <br />
