@@ -2,10 +2,10 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.includes(:replies)
-
+    @comments = Comment.includes(:replies).paginate(page: params[:page], per_page: 2)
     respond_to do |format|
       format.html # index.html.erb
+      format.js
       format.json { render json: @comments }
     end
   end

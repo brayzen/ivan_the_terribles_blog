@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.6'
+gem 'rack-mini-profiler'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
