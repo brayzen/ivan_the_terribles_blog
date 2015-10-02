@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(published: params[:status] == 'published')
+    @posts = Post.where(published: true)
       .search(params[:search])
       .page(params[:page])
       .per(15)
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find(post_params)
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -82,5 +82,11 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :published)
   end
 end
