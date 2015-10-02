@@ -1,12 +1,13 @@
 
 jQuery ->
-  $('.pagination').length
+  # $('.pagination').length
   $(window).scroll ->
     url = $('.pagination .next_page').attr('href')
     if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
      # $('.pagination').text("Fetching the page for you ... ")
       $.get url, (data) ->
-        $('.blog').append(data)
+        $(window).append(data)
 
-  $(window).scroll()
+  # $(window).scroll()
+
 
