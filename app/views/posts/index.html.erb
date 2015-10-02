@@ -1,0 +1,9 @@
+<h1>Ivan the Terrible's Blog</h1>
+<%= render "search_form" %>
+<section class="blog">
+  <%= render @posts %>
+</section>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
